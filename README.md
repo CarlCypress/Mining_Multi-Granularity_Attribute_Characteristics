@@ -1,6 +1,6 @@
 # Mining Multi-Granularity Attribute Characteristics
 
-本项目为该论文的代码开源，其中代码为整理后的代码，为了方便读者查看，对文件目录进行了调整改动。故在使用时 **可能** 存在导入路径不正确等问题，读者仅需将文件目录进行调整后进行使用即可。另外，本项目 **数据来源** 为 [Yago官网](https://yago-knowledge.org/) ，读者请自行下载到本地，再使用本项目中对应的文件进行处理。
+本项目为该论文的代码开源，其中代码为整理后的代码，为了方便读者查看，对文件目录进行了调整改动。故在使用时 **可能** 存在导入包不存在等问题，读者仅需将文件目录加入用户路径或调整后进行使用即可。另外，本项目 **数据来源** 为 [Yago官网](https://yago-knowledge.org/) ，读者请自行下载到本地，再使用本项目中对应的文件进行处理。
 
 ## Installation
 
@@ -12,7 +12,7 @@
 pip install -r ./requirements.txt
 ```
 
-**注*：** 使用该命令时，注意路径问题。
+**注：** 使用该命令时，注意路径问题。
 
 ### About data access
 
@@ -41,7 +41,7 @@ class sql_tool:
 
 从 [Yago官网](https://yago-knowledge.org/) 下载得到的数据集为 *ttl* 格式文件，通过使用本项目的 *./Yago2SQL/Yago_into_Sql.ipynb* 或 *./Yago2SQL/yago_into_sql_server.py* 文件即可将 *ttl* 文件存储到本地的 *sql server 2012* 中。
 
-**注*：** 请读者注意更改相关参数，尤其注意连接数据库时相关参数的修改。
+**注：** 请读者注意更改相关参数，尤其注意连接数据库时相关参数的修改。
 
 ## Build Table
 
