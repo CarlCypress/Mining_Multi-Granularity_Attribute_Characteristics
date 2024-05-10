@@ -1,22 +1,26 @@
+[![](https://img.shields.io/badge/语言切换-中文-blue)](./README_cn.md)
+
 # Mining Multi-Granularity Attribute Characteristics
 
-本项目为该论文的代码开源，其中代码为整理后的代码，为了方便读者查看，对文件目录进行了调整改动。故在使用时 **可能** 存在导入包不存在等问题，读者仅需将文件目录加入用户路径或调整后进行使用即可。另外，本项目 **数据来源** 为 [Yago官网](https://yago-knowledge.org/) ，读者请自行下载到本地，再使用本项目中对应的文件进行处理。
+This project contains the open-source code for the paper. The code provided here has been organized for easier reference. Therefore, **potential** issues such as missing package imports may arise due to adjustments made to the file directory. Readers simply need to add the file directory to their user path or make necessary adjustments before use.
+
+Additionally, the **data source** for this project is [Yago's official website](https://yago-knowledge.org/). Readers are required to download the data to their local environment and then utilize the corresponding files provided within this project for processing.
 
 ## Installation
 
 ### Requirements
 
-安装该项目 *./requirements.txt* 文件指定的依赖包，若使用 **shell** 命令，可参考下面代码。
+To install the dependencies specified in the *./requirements.txt* file for this project, if utilizing **shell** commands, you can refer to the code snippet below:
 
 ```shell
 pip install -r ./requirements.txt
 ```
 
-**注：** 使用该命令时，注意路径问题。
+**Note:** Pay attention to path-related issues when using this command.
 
 ### About data access
 
-为方便本项目数据集读取操作，本项目在 *./ToolScript/* 目录下（为方便使用，读者可以将此路径存入电脑系统环境变量之中）封装了针对个人电脑读取 *SQL Server* 数据的类，读者在使用时，需要对该类当中的 `__init__()` 进行修改，本项目的初始化如下代码所示。
+For the convenience of dataset retrieval operations in this project, under the *./ToolScript/* directory (for ease of use, readers can add this path to their computer's system environment variables), classes tailored for reading *SQL Server* data for personal computers have been encapsulated. When using this, readers need to modify the `__init__()` method within this class. The initialization of this project is as shown in the following code snippet.
 
 ```python
 class sql_tool:
@@ -33,46 +37,46 @@ class sql_tool:
    pass
 ```
 
-另外， *./ToolScript/test_script.ipynb* 展示了如何读取数据。 
+Additionally, *./ToolScript/test_script.ipynb* demonstrates how to read the data.
 
-**注：** 建议读者使用本项目提供的方式进行读取！否则在实际运行当中，可能会因为编码原因导致数据库数据存取时无限变动。
+**Note:** It is recommended that readers utilize the methods provided in this project for data retrieval. Otherwise, during actual execution, there may be infinite variations in database data retrieval due to encoding issues.
 
 ## Data storage
 
-从 [Yago官网](https://yago-knowledge.org/) 下载得到的数据集为 *ttl* 格式文件，通过使用本项目的 *./Yago2SQL/Yago_into_Sql.ipynb* 或 *./Yago2SQL/yago_into_sql_server.py* 文件即可将 *ttl* 文件存储到本地的 *sql server 2012* 中。
+The dataset obtained from [Yago's official website](https://yago-knowledge.org/) is in *ttl* format. You can use either the *./Yago2SQL/Yago_into_Sql.ipynb* notebook or the *./Yago2SQL/yago_into_sql_server.py* script from this project to store the *ttl* file into your local *SQL Server 2012*.
 
-**注：** 请读者注意更改相关参数，尤其注意连接数据库时相关参数的修改。
+**Note:** Please pay attention to modifying relevant parameters, especially when adjusting parameters related to database connections.
 
 ## Build Table
 
 ### Preparation work
 
-本数据集中为自然语言数据集，故需要对其中每一个关键词进行编码，本项目使用 *./BuildTable/building_yago_code_tables.ipynb* 对数据集的自然语言关键词进行编码，此文件主要内容为，将 **yagoSchema, yagoCountTaxonomy, yagoTaxonomy, yagoDateFacts, yagoFacts, yagoLabels, yagoLiteralFacts, yagoTransitiveType** 数据转化成为 **instance_code, predicate_code, attribute_value_type_code, attribute_value_code** 。
+In this dataset, since it contains natural language data, it's necessary to encode each keyword. This project utilizes *./BuildTable/building_yago_code_tables.ipynb* to encode the natural language keywords in the dataset. The main content of this file involves transforming **yagoSchema, yagoCountTaxonomy, yagoTaxonomy, yagoDateFacts, yagoFacts, yagoLabels, yagoLiteralFacts, yagoTransitiveType** data into **instance_code, predicate_code, attribute_value_type_code, attribute_value_code**.
 
 ### Multi-granularity table creation
 
-本项目使用 *./BuildTable/building_concept_tables.ipynb* 建立所选取概念对应的 **binary, type, value** 三个粒度矩阵。
+This project utilizes *./BuildTable/building_concept_tables.ipynb* to establish three matrices corresponding to the selected concepts: **binary, type,** and **value**.
 
 ## Mining
 
 ### Run time calculation
 
-当前项目分别使用 *./Mining/generate_binary_runtime.py, ./Mining/generate_type_runtime.py, ./Mining/generate_value_runtime.py* 三个脚本分别对 **bianry, type, value** 三个粒度分别使用 **Apriori, MDC** 算法在每个概念上的运行时间，另外使用 *./Mining/RuntimeAndPatternCount/concept_1_time.py, ./Mining/RuntimeAndPatternCount/concept_2_time.py, ./Mining/RuntimeAndPatternCount/concept_3_time.py, ./Mining/RuntimeAndPatternCount/concept_4_time.py* 四个脚本计算了每个概念在三个粒度上整体使用 **Apriori, MAC** 算法的运行时间，并生成了相关的 *excel* 文件。
+The current project utilizes three scripts: *./Mining/generate_binary_runtime.py, ./Mining/generate_type_runtime.py, ./Mining/generate_value_runtime.py*, to measure the runtime of **binary, type, value** matrices respectively using the **Apriori** and **MDC** algorithms on each concept. Additionally, four scripts: *./Mining/RuntimeAndPatternCount/concept_1_time.py, ./Mining/RuntimeAndPatternCount/concept_2_time.py, ./Mining/RuntimeAndPatternCount/concept_3_time.py, ./Mining/RuntimeAndPatternCount/concept_4_time.py*, are used to calculate the overall runtime of each concept on the three granularities using **Apriori** and **MAC** algorithms, and generate corresponding *excel* files.
 
 ### Number calculation
 
-论文中计算了每个概念对应的所有频繁模式个数和极大频繁模式的个数，在本项目中分别使用 *./Mining/RuntimeAndPatternCount/concept_1.py, ./Mining/RuntimeAndPatternCount/concept_2.py, ./Mining/RuntimeAndPatternCount/concept_3.py, ./Mining/RuntimeAndPatternCount/concept_4.py* 对4个概念所有频繁模式和极大频繁模式分别进行了计算，并生成了相关的 *excel* 文件。
+In the paper, the number of all frequent patterns and maximal frequent patterns corresponding to each concept was calculated. In this project, *./Mining/RuntimeAndPatternCount/concept_1.py, ./Mining/RuntimeAndPatternCount/concept_2.py, ./Mining/RuntimeAndPatternCount/concept_3.py, ./Mining/RuntimeAndPatternCount/concept_4.py* scripts are used to compute all frequent patterns and maximal frequent patterns for the four concepts respectively, and generate relevant *excel* files.
 
 ### Prediction
 
-本项目使用 *./Mining/predict/concept_1.py, ./Mining/predict/concept_2.py, ./Mining/predict/concept_3.py, ./Mining/predict/concept_4.py* 分别对4个概念进行了概念预测，并生成了相关的 *excel* 文件。
+This project utilizes *./Mining/predict/concept_1.py, ./Mining/predict/concept_2.py, ./Mining/predict/concept_3.py, ./Mining/predict/concept_4.py* to perform concept prediction for the four concepts respectively, and generates relevant *excel* files.
 
 ## Other
 
-论文中使用的 **Apriori, MDC** 算法源文件分别为 *./Mining/Apriori/apriori.py, ./Mining/maxFrequent/maxFrequent.py* 两个脚本，其次， **MAC** 为以上两个算法在三个粒度上的结合，故没有将该算法单独实现为一个源文件。若读者需要参考实现方法，请参考本项目中的 *./Mining/RuntimeAndPatternCount/common.py* 脚本中的 `Integ(concept_idx: int, frequent: float, return_type='pattern') -> list` 函数。
+The source files for the **Apriori** and **MDC** algorithms used in the paper are respectively *./Mining/Apriori/apriori.py* and *./Mining/maxFrequent/maxFrequent.py*. Additionally, **MAC** is a combination of the above two algorithms on three granularities, so it's not implemented as a separate source file. If readers need to refer to the implementation method, they can check the `Integ(concept_idx: int, frequent: float, return_type='pattern') -> list` function in the *./Mining/RuntimeAndPatternCount/common.py* script of this project.
 
-此项目代码开源为临时起意，故仅能对论文的相关实验代码进行整理后进行开源，没有封装执行文件，还请见谅！若读者希望重现，请仔细阅读当前文档。
+This project's code was open-sourced on a temporary basis, hence only the experimental code related to the paper could be organized and made open-source. There are no packaged executable files, so please forgive us for this inconvenience! If readers wish to reproduce the experiments, please carefully read the current document.
 
 # Personal statement
 
-由于本人初次书写开源代码，水平有限，项目代码中可能存在部分问题，请读者见谅。若有问题，可在该网站上与本人联系。
+Due to my limited experience in writing open-source code, there may be some issues in the project code. I apologize for any inconvenience this may cause to the readers. If there are any problems, please feel free to contact me through this website.
