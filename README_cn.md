@@ -47,13 +47,13 @@ class sql_tool:
 
 **注：** 请读者注意更改相关参数，尤其注意连接数据库时相关参数的修改。
 
-## 数据表简历
+## 数据表建立
 
 ### 准备工作
 
 本数据集中为自然语言数据集，故需要对其中每一个关键词进行编码，本项目使用 *./BuildTable/building_yago_code_tables.ipynb* 对数据集的自然语言关键词进行编码，此文件主要内容为，将 **yagoSchema, yagoCountTaxonomy, yagoTaxonomy, yagoDateFacts, yagoFacts, yagoLabels, yagoLiteralFacts, yagoTransitiveType** 数据转化成为 **instance_code, predicate_code, attribute_value_type_code, attribute_value_code** 。
 
-### 多粒度表简历
+### 多粒度表建立
 
 本项目使用 *./BuildTable/building_concept_tables.ipynb* 建立所选取概念对应的 **binary, type, value** 三个粒度矩阵。
 
