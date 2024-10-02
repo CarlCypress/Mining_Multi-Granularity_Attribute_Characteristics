@@ -69,7 +69,7 @@ In the paper, the number of all frequent patterns and maximal frequent patterns 
 
 ### Prediction
 
-This project utilizes *./Mining/predict/concept_1.py, ./Mining/predict/concept_2.py, ./Mining/predict/concept_3.py, ./Mining/predict/concept_4.py* to perform concept prediction for the four concepts respectively, and generates relevant *excel* files.
+This project utilizes *./Mining/execute.py* to perform concept prediction for the four concepts respectively, and generates relevant *excel* files.
 
 ## Other
 
