@@ -69,7 +69,7 @@ class sql_tool:
 
 ### 预测
 
-本项目使用 *./Mining/predict/concept_1.py, ./Mining/predict/concept_2.py, ./Mining/predict/concept_3.py, ./Mining/predict/concept_4.py* 分别对4个概念进行了概念预测，并生成了相关的 *excel* 文件。
+本项目使用 *./Mining/predict/execute.py* 对4个概念进行了概念预测，并生成了相关的 *excel* 文件。
 
 ## 其他
 
