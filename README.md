@@ -2,7 +2,7 @@
 
 # Mining Multi-Granularity Attribute Characteristics
 
-This project contains the open-source code for the paper. The code provided here has been organized for easier reference. Therefore, **potential** issues such as missing package imports may arise due to adjustments made to the file directory. Readers simply need to add the file directory to their user path or make necessary adjustments before use.
+This project is the open-source code for the paper [*Concept Cognition over Knowledge Graphs: A Perspective from Mining Multi-Granularity Attribute Characteristics of Concepts*](https://doi.org/10.1016/j.ipm.2025.104095). The code provided here is the organized version, with modifications made to the file directory for ease of review. Therefore, **potential** issues such as missing package imports may arise due to adjustments made to the file directory. Readers simply need to add the file directory to their user path or make necessary adjustments before use.
 
 Additionally, the **data source** for this project is [Yago's official website](https://yago-knowledge.org/). Readers are required to download the data to their local environment and then utilize the corresponding files provided within this project for processing.
 
@@ -77,6 +77,3 @@ The source files for the **Apriori** and **MDC** algorithms used in the paper ar
 
 This project's code was open-sourced on a temporary basis, hence only the experimental code related to the paper could be organized and made open-source. There are no packaged executable files, so please forgive us for this inconvenience! If readers wish to reproduce the experiments, please carefully read the current document.
 
-# Personal statement
-
-Due to my limited experience in writing open-source code, there may be some issues in the project code. I apologize for any inconvenience this may cause to the readers. If there are any problems, please feel free to contact me through this website.
