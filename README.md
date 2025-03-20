@@ -75,5 +75,11 @@ This project utilizes *./Mining/execute.py* to perform concept prediction for th
 
 The source files for the **Apriori** and **MDC** algorithms used in the paper are respectively *./Mining/Apriori/apriori.py* and *./Mining/maxFrequent/maxFrequent.py*. Additionally, **MAC** is a combination of the above two algorithms on three granularities, so it's not implemented as a separate source file. If readers need to refer to the implementation method, they can check the `Integ(concept_idx: int, frequent: float, return_type='pattern') -> list` function in the *./Mining/RuntimeAndPatternCount/common.py* script of this project.
 
-This project's code was open-sourced on a temporary basis, hence only the experimental code related to the paper could be organized and made open-source. There are no packaged executable files, so please forgive us for this inconvenience! If readers wish to reproduce the experiments, please carefully read the current document.
+## Citation
+
+```
+Hu, X., Huang, D., Duan, J., Wu, P., Zhang, S. and Li, W., 2025. Concept cognition over knowledge graphs: A perspective from mining multi-granularity attribute characteristics of concepts. Information Processing & Management, 62(4), p.104095.
+```
+
+
 

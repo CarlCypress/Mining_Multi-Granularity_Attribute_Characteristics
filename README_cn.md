@@ -75,7 +75,11 @@ class sql_tool:
 
 论文中使用的 **Apriori, MDC** 算法源文件分别为 *./Mining/Apriori/apriori.py, ./Mining/maxFrequent/maxFrequent.py* 两个脚本，其次， **MAC** 为以上两个算法在三个粒度上的结合，故没有将该算法单独实现为一个源文件。若读者需要参考实现方法，请参考本项目中的 *./Mining/RuntimeAndPatternCount/common.py* 脚本中的 `Integ(concept_idx: int, frequent: float, return_type='pattern') -> list` 函数。
 
-此项目代码开源为临时起意，故仅能对论文的相关实验代码进行整理后进行开源，没有封装执行文件，还请见谅！若读者希望重现，请仔细阅读当前文档。
+## 引用
+
+```
+Hu, X., Huang, D., Duan, J., Wu, P., Zhang, S. and Li, W., 2025. Concept cognition over knowledge graphs: A perspective from mining multi-granularity attribute characteristics of concepts. Information Processing & Management, 62(4), p.104095.
+```
 
 
 
