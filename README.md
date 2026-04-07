@@ -78,7 +78,16 @@ The source files for the **Apriori** and **MDC** algorithms used in the paper ar
 ## Citation
 
 ```
-Hu, X., Huang, D., Duan, J., Wu, P., Zhang, S. and Li, W., 2025. Concept cognition over knowledge graphs: A perspective from mining multi-granularity attribute characteristics of concepts. Information Processing & Management, 62(4), p.104095.
+@article{hu2025concept,
+  title={Concept cognition over knowledge graphs: A perspective from mining multi-granularity attribute characteristics of concepts},
+  author={Hu, Xin and Huang, Denan and Duan, Jiangli and Wu, Pingping and Zhang, Sulan and Li, Wenqin},
+  journal={Information Processing \& Management},
+  volume={62},
+  number={4},
+  pages={104095},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 
 
